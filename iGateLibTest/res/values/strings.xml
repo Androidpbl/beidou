@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">iGateLibTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="label_state">iGate idle</string>
+    <string name="button_search">scan</string>
+    <string name="button_stopsearch">stop</string>
+	<string name="button_send">send</string>
+	<string name="textview_received">Contact with support@novacomm.cn for any issues of the app and BLE module.\r\nData Received ...</string>
+	<string name="hint_input">Input data to send</string>
+	<string name="str_scanning">Searching for iGate ...</string>
+	<string name="str_idle">iGate idle ...</string>
+	<string name="str_found">iGate device found :</string>
+	<string name="str_connecting">iGate device connecting :</string>
+	<string name="str_connected">iGate device connected :</string>
+
+</resources>
