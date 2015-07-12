@@ -7,6 +7,7 @@ import java.util.Map;
 
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
@@ -16,7 +17,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.novacomm.igatelibtest.R;
+import cn.novacomm.igatelibtest.act.MessageBoxList;
 import cn.novacomm.igatelibtest.adapter.ContactHomeAdapter;
+import cn.novacomm.igatelibtest.base.BaseActivity;
 import cn.novacomm.igatelibtest.base.BaseFragment;
 import cn.novacomm.igatelibtest.bean.ContactBean;
 import cn.novacomm.igatelibtest.view.ui.QuickAlphabeticBar;
@@ -54,6 +57,7 @@ public class ContactFragment extends BaseFragment {
     private Map<Integer, ContactBean> contactIdMap = null;
     private List<ContactBean> list;
     private ContactHomeAdapter adapter;
+    private TextView tv_title;
     
     /**
      * 当前索引选中值
@@ -61,10 +65,13 @@ public class ContactFragment extends BaseFragment {
     private TextView tv_fast_position;
     @Override
     protected void findViews(View view) {
+        
         lv=(ListView) view.findViewById(R.id.fragment_contact_list);
         quickAlphabeticBar=(QuickAlphabeticBar) view.findViewById(R.id.fast_scroller);
         tv_fast_position=(TextView) view.findViewById(R.id.fast_position);
         asyncQuery = new MyAsyncQueryHandler(getActivity().getContentResolver());
+        tv_title=(TextView) view.findViewById(R.id.title);
+        tv_title.setText("联系人");
     }
 
     @Override
@@ -179,10 +186,34 @@ public class ContactFragment extends BaseFragment {
         //TODO 点击事件
         lv.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                ContactBean cb = (ContactBean) adapter.getItem(position);
-//                showContactDialog(lianxiren1, cb, position);
+                ContactBean cb = (ContactBean) adapter.getItem(position);
+                String threadId = getSMSThreadId(cb.getPhoneNum());
+                Intent intent =new Intent(getActivity(), MessageBoxList.class);
+                intent.putExtra("phoneNumber", cb.getPhoneNum());
+                intent.putExtra("threadId", threadId);
+                startActivity(intent);
             }
         });
     }
+    
+    public static String[] SMS_COLUMNS = new String[]{  
+        "thread_id"
+    };
+    private String getSMSThreadId(String adddress){
+        Cursor cursor = null;  
+        ContentResolver contentResolver = getActivity().getContentResolver();  
+        cursor = contentResolver.query(Uri.parse("content://sms"), SMS_COLUMNS, " address like '%" + adddress + "%' ", null, null);  
+        String threadId = "";
+        if (cursor == null || cursor.getCount() > 0){
+            cursor.moveToFirst();
+            threadId = cursor.getString(0);
+            cursor.close();
+            return threadId;
+        }else{
+            cursor.close();
+            return threadId;
+        }
+    }
+
 
 }

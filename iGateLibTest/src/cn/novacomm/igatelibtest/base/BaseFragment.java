@@ -50,7 +50,7 @@ public abstract class BaseFragment extends FrameFragment implements
     // Button act_base_top_leftbtn;
     public HttpRequestBean httpRequestBean;
     // private Handler handler;
-    private Dialog dgLoading, dgNoTitle;
+    protected Dialog dgLoading, dgNoTitle;
     protected Context CTX = getActivity();
 
     protected static final boolean ISTEST = BaseActivity.ISTEST;// 测试时为TRUE
@@ -62,7 +62,7 @@ public abstract class BaseFragment extends FrameFragment implements
         dgLoading = getRequestDg(getActivity());
         dgNoTitle = getRequestDgWithNoTitle(getActivity());
         AppContext.curContext = getActivity();
-
+        
         // handler = new Handler();
     }
 

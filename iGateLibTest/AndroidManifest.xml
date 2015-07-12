@@ -34,19 +34,21 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="5019ca124742acca0e5d7fcb3e034a34" /> <!-- 测试版 -->
+
         <activity
             android:name="cn.novacomm.igatelibtest.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name="cn.novacomm.igatelibtest.act.MessageBoxList"
-            android:screenOrientation="portrait"
-             >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="cn.novacomm.igatelibtest.act.ContactAct"
-             android:screenOrientation="portrait"
-            >
+            android:name="cn.novacomm.igatelibtest.act.HomeAct"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
