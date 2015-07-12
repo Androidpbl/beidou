@@ -6,13 +6,13 @@
     <string name="label_state">iGate idle</string>
     <string name="button_search">scan</string>
     <string name="button_stopsearch">stop</string>
-	<string name="button_send">send</string>
-	<string name="textview_received">Contact with support@novacomm.cn for any issues of the app and BLE module.\r\nData Received ...</string>
-	<string name="hint_input">Input data to send</string>
-	<string name="str_scanning">Searching for iGate ...</string>
-	<string name="str_idle">iGate idle ...</string>
-	<string name="str_found">iGate device found :</string>
-	<string name="str_connecting">iGate device connecting :</string>
-	<string name="str_connected">iGate device connected :</string>
+    <string name="button_send">send</string>
+    <string name="textview_received">Contact with support@novacomm.cn for any issues of the app and BLE module.\r\nData Received ...</string>
+    <string name="hint_input">Input data to send</string>
+    <string name="str_scanning">搜索设备...</string>
+    <string name="str_idle">设备地址:</string>
+    <string name="str_found">发现设备 :</string>
+    <string name="str_connecting">设备已连接，地址：</string>
+    <string name="str_connected">设备曾连接地址 :</string>
 
 </resources>

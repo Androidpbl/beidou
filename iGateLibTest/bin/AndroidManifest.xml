@@ -4,11 +4,16 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    
-    <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="18" />
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -18,11 +23,14 @@
         <activity
             android:name="cn.novacomm.igatelibtest.MainActivity"
             android:label="@string/app_name" >
-            <intent-filter>
+        </activity>
+        <activity android:name="cn.novacomm.igatelibtest.act.PhoneDemoActivity" >
+               <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+         
         </activity>
     </application>
 
