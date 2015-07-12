@@ -82,4 +82,8 @@
     <color name="bantouming">#5A000000</color>
     <color name="pic_bg">#303030</color>
 
+       <!-- 侧边栏灰线 -->
+    <color name="avatar_line">#ffefefef</color>
+    <color name="lighter_gray">#ffd3d3d3</color>
+    <color name="list_divider">#d7d7d7</color>
 </resources>

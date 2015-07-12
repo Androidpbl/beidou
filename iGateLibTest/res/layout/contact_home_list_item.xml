@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- 首字母 -->
+
+    <TextView
+        android:id="@+id/alpha"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lighter_gray"
+        android:paddingLeft="10dip"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+
+    <!-- 联系人信息 -->
+
+    <QuickContactBadge
+        android:id="@+id/qcb"
+        android:layout_width="75dip"
+        android:layout_height="75dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/alpha"
+        android:layout_marginBottom="3dip"
+        android:layout_marginTop="3dip"
+        android:visibility="invisible"
+         />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15.0dip"
+        android:layout_toRightOf="@+id/qcb"
+        android:singleLine="true"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5.0dip"
+        android:layout_toRightOf="@+id/qcb"
+        android:layout_alignParentBottom="true"
+        android:singleLine="true"
+        android:textAppearance="?android:textAppearanceSmall" />
+
+</RelativeLayout>

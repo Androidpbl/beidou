@@ -17,6 +17,7 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -64,6 +65,7 @@ public abstract class BaseActivity extends FrameActivity implements
         super.onCreate(savedInstanceState);
         dgLoading = getRequestDg(this);
         AppContext.curContext = this;
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(loadView());
         CloseMe.add(this);
         findViews();

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <include 
+        android:id="@+id/titlebar"
+        layout="@layout/title_bar" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_ll"
+        android:layout_below="@+id/titlebar"
+        android:background="#00000000"
+        android:cacheColorHint="#00000000"
+        android:choiceMode="singleChoice"
+        android:soundEffectsEnabled="true" />
+
+    <LinearLayout
+        android:id="@+id/bottom_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_titlebar"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+
+
+        <EditText
+            android:id="@+id/neirong"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/bg_sms_input"
+            android:gravity="left|top"
+            android:hint="输入短信内容"
+            android:maxLines="4"
+            android:padding="5dip" />
+
+        <Button
+            android:id="@+id/fasong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:background="@drawable/bg_sms_send_normal"
+            android:text="发送"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</RelativeLayout>
