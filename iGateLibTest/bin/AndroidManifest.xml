@@ -28,6 +28,14 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -36,7 +44,9 @@
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="5019ca124742acca0e5d7fcb3e034a34" /> <!-- 测试版 -->
+            android:value="46d83b32ea74d3aa1e9d6382601c758b" />
+        <!-- 家里电脑测试版   5019ca124742acca0e5d7fcb3e034a34 -->
+        <!-- 公司电脑测试版   46d83b32ea74d3aa1e9d6382601c758b -->
 
         <activity
             android:name="cn.novacomm.igatelibtest.MainActivity"
@@ -49,11 +59,23 @@
         <activity
             android:name="cn.novacomm.igatelibtest.act.HomeAct"
             android:screenOrientation="portrait" >
-            <intent-filter>
+
+           
+                 <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>
+            
+        </activity>
+        <activity
+            android:name="cn.novacomm.igatelibtest.act.LocationSourceActivity"
+            android:screenOrientation="portrait" >
+     <!--        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
         </activity>
         <activity android:name="cn.novacomm.igatelibtest.act.PhoneDemoActivity" >
         </activity>

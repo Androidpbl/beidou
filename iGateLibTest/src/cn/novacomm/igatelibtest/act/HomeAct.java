@@ -1,5 +1,6 @@
 package cn.novacomm.igatelibtest.act;
 
+import android.annotation.SuppressLint;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -24,6 +25,7 @@ import cn.novacomm.igatelibtest.fragment.MapFragment;
  * 
  * @Version:1.0
  */
+@SuppressLint("ResourceAsColor")
 public class HomeAct extends BaseActivity {
 
 	private MapFragment mapFragment;
@@ -99,7 +101,7 @@ public class HomeAct extends BaseActivity {
 			}
 			break;
 		case R.id.iv_sos:// 一键求救
-
+			alterText("一键求救");
 			break;
 
 		}
@@ -162,6 +164,10 @@ public class HomeAct extends BaseActivity {
 	 * 清除掉所有的选中状态。
 	 */
 	private void clearSelection() {
+		tv_map.setTextColor(getResources().getColor(R.color.black));
+		tv_message.setTextColor(getResources().getColor(R.color.black));
+		iv_map.setBackgroundResource(R.drawable.dt_wx);
+		iv_message.setBackgroundResource(R.drawable.th_wx);
 	}
 
 	/**
